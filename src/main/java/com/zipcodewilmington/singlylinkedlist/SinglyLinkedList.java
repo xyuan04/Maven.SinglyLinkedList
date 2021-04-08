@@ -69,7 +69,7 @@ public class SinglyLinkedList<Type extends Comparable<Type>> {
         Node<Type> current = head;
 
         while(current != null) {
-//            System.out.println(current.data);
+            System.out.println(current.data);
             current = current.next;
             counter++;
         }
@@ -123,4 +123,20 @@ public class SinglyLinkedList<Type extends Comparable<Type>> {
         }
         return original;
     }
+
+    public SinglyLinkedList<Type> reverse(SinglyLinkedList<Type> original) {
+        Node<Type> previous = null;
+        Node<Type> next;
+        Node<Type> current = original.head;
+
+        while(current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        original.head = previous;
+        return original;
+    }
+
 }

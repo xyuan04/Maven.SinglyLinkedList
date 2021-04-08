@@ -247,8 +247,8 @@ public class SinglyLinkedListTest {
 
         //When:
         SinglyLinkedList<String> sortedList = singly.sort(singly);
-        int expected = 8;
-        int actual = sortedList.size();
+        String expected = "Nobles";
+        String actual = sortedList.get(3);
 
         //Then:
         Assert.assertEquals(expected, actual);
@@ -269,8 +269,30 @@ public class SinglyLinkedListTest {
 
         //When:
         SinglyLinkedList<Integer> sortedList = singly.sort(singly);
-        int expected = 8;
-        int actual = sortedList.size();
+        int expected = 69;
+        int actual = sortedList.get(3);
+
+        //Then:
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testReverse() {
+        //Given:
+        SinglyLinkedList<Integer> singly = new SinglyLinkedList<Integer>();
+        singly.addNode(69);
+        singly.addNode(420);
+        singly.addNode(6);
+        singly.addNode(9);
+        singly.addNode(20);
+        singly.addNode(423);
+        singly.addNode(84);
+        singly.addNode(74);
+
+        //When:
+        SinglyLinkedList<Integer> sortedList = singly.reverse(singly);
+        int expected = 74;
+        int actual = sortedList.get(0);
 
         //Then:
         Assert.assertEquals(expected, actual);
